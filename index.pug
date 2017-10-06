@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Greet Inn喜迎旅店 | 高雄飯店、高雄住宿推薦
+        link(rel="shortcut icon" href="img/favicon.ico")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+        link(rel="stylesheet", href="stylesheets/style.css")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css")        
+        script(src='js/script.js')
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+        script(src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js")
+        
+    body
+        .leftMenu
+            .nav-icon
+                .one
+                .two
+                .three
+            
+            .logo
+                a(href="")
+                    img(src="img/logo_m.png", alt="" width="100%")
+            a.reservation_pc(href="") 線上訂房
+            .menu
+                ul.hidden
+                    li
+                        a(href="")
+                            span.cn 飯店介紹
+                            span.en about
+                    li
+                        a(href="")
+                            span.cn 最新消息
+                            span.en news                            
+                    li
+                        a(href="")
+                            span.cn 房型介紹
+                            span.en rooms
+                        ul
+                            li
+                                a(href="") 房型一覽
+                            li
+                                a(href="") 房價表                          
+                    li
+                        a(href="")
+                            span.cn 訂房須知
+                            span.en notice
+                    li
+                        a(href="")
+                            span.cn 服務設施
+                            span.en facility
+                    li
+                        a(href="")
+                            span.cn 交通位置
+                            span.en location
+                    li
+                        a(href="")
+                            span.cn 聯絡我們
+                            span.en contact
+            .menuFooter                
+                //- .social
+                //-     ul
+                //-         li
+                //-             a(href="")
+                //-                 i.fa.fa-instagram
+                //-         li
+                //-             a(href="")
+                //-                 i.fa.fa-facebook-square
+                //-         li
+                //-             a(href="")
+                //-                 img(src="img/line.png", alt="")
+
+                //- .lang
+                //-     span language
+                //-     ul
+                //-         li
+                //-             a(href="") en
+                //-         li
+                //-             a(href="") 日本語
+                //-         li
+                //-             a(href="") 簡中
+                
+                .reservation
+                    a(href="")
+                        i.fa.fa-plus
+                        span.cn 立即訂房<br>
+                        span.en book rooms       
+        .rightContainer
+            .contain
+                .slider.slick
+                    .slide
+                        img(src="img/slick01.jpg")
+                    .slide
+                        img(src="img/slick02.jpg")
+                    .slide
+                        img(src="img/slick03.jpg")
+            
+            section.aboutArea
+                .title
+                    h2 about us
+                    h1 greet inn
+                    h4 喜迎飯店
+                p 港都的溫暖、人情的溫度，由心開始恣意探索<br>城市都心、旅人起點，陽光與海風與您共舞<br>在地人文、美食味蕾，讓您的回憶充滿感動
+                div 喜歡與您相遇　迎接快樂旅程
+                p 美好故事，由此開始　城市都心，漫遊起點<br>Greet Inn坐落於高雄市中心位置的六合二路，鬧中取靜，比鄰捷運市議會站，交通便利，讓您用悠閒步調探索高雄。
+            section.newsArea
+                .title
+                    h2 the lastest
+                    h1 news
+                    h4 最新消息
+            .roomArea
+                a.imgbox(href="")
+                    img(src="img/room01.jpg", alt="")
+                    .txt 
+                        h3 豪華雙人房				
+                        span Deluxe Double Room
+                a.imgbox(href="")
+                    img(src="img/room02.jpg", alt="")
+                    .txt 
+                        h3 伯爵套房								
+                        span Bonjour Suite                    
+                a.imgbox(href="")
+                    img(src="img/room03.jpg", alt="")
+                    .txt 
+                        h3 和樂家庭房								
+                        span Hola Family Room                    
+                a.imgbox(href="")
+                    img(src="img/room04.jpg", alt="")
+                    .txt 
+                        h3 羅夫特家庭房								
+                        span Loft Family Suite                    
+                a.imgbox(href="")
+                    img(src="img/room05.jpg", alt="")
+                    .txt 
+                        h3 喜迎套房								
+                        span Greet Inn Suite                    
+            
+            section.locationArea
+                .container
+                    .locationInfo
+                        .title
+                            h2 LOCATION &
+                            h1 TRAFFIC
+                            h4 交通方式
+                        .method
+                            .icon
+                                div 方法
+                                span 01
+                            .infos
+                                h2 大眾運輸
+                                p 【捷運】<br>搭乘捷運橘線至市議會站(舊址)(4號出口)，步行2分鐘。
+                                p 【公車】<br>紅69、218，抵達六合二路口站後，步行約1分鐘。
+                                
+                        .method
+                            .icon
+                                div 方法
+                                span 02
+                            .infos
+                                h2 自行開車
+                                p 【行經國道一號(中山高)】約20分鐘。<br>下中正交流道，左轉中正路往市區方向<br>→文武一街(過中華路下個路口)右轉即可抵達飯店停車場<br>(於地下室B2~B3)，恕不提供預約保留或保證車位。
+                        a.more(href="") read
+                    .map 
+                        iframe(allowfullscreen="" frameborder="0" height="450" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14730.49609344376!2d120.2948022!3d22.630511!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3f53fd6f40a3204f!2zR3JlZXQgSW5u5Zac6L-O5peF5bqX!5e0!3m2!1szh-TW!2stw!4v1494388087343" style="border:0" width="auto")
+            footer
+                .container
+                    .infos
+                        p 80143 高雄市前金區六合二路161號
+                        span 合法旅館登記號
+                        span 10630632300   
+                    .infos
+                        .tel
+                            span tel
+                            span 10630632300
+                        .fax
+                            span fax
+                            span 07-231-8383 
+                    .infos
+                        .checkIn
+                            span check in
+                            span 15:00 
+                        .checkOut
+                            span checkout
+                            span 11:00 
+                    .infos
+                        .sericeTime
+                            span serice time
+                            span 24 hr
+                        .email
+                            span e-mail
+                            span fo@greetinn.com.tw    
+                    .footerBottom
+                        .share
+                            span share us 
+                                a(href="")
+                                    i.fa.fa-facebook
+                                
+                                a(href="")
+                                    i.fa.fa-twitter
+                                
+                                a(href="")
+                                    i.fa.fa-google-plus
+                                
+                                a(href="")
+                                    i.fa.fa-weibo
+                                
+                                a(href="")
+                                    i.fa.fa-envelope-o
+                        
+                        .copyright COPYRIGHT 2017 © ALL RIGHTS RESERVED.
+                
+

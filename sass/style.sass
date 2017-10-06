@@ -1,0 +1,596 @@
+@import compass
+@import mixin
+
+
+*,*:before,*:after
+    // border: solid 1px black
+    box-sizing: border-box
+
+html,body
+    margin: 0
+    padding: 0
+    font-family: Arial, '微軟正黑體'
+    font-weight: 100
+    text-transform: uppercase
+    color: $colorText
+    +size(100%, 100vh)
+    +clearfix
+.title
+    letter-spacing: 3px
+    line-height: 30px
+    * 
+        font-weight: 100
+    h2
+        color: $colorReservation
+        font-size: 30px
+    h1 
+        font-size: 60px
+    h4 
+        font-size: 30px
+a 
+    text-decoration: none
+ul 
+    padding-left: 0
+    li 
+        list-style: none
+section 
+    padding: 80px 0
+    +breakpoint(pc)
+        padding: 0 30px
+.container
+    margin: 0 auto
+    width: 90%
+    padding: 0 10px
+    
+        
+.leftMenu
+    background: url(../img/house.png) right top no-repeat, $colorMenuBackground
+    float: left
+    position: fixed
+    left: 0
+    top: 0
+    text-align: center
+    box-shadow: 4px 0px rgba(0,0,0,.1)
+    z-index: 2
+    +size(320px,100vh)
+    +breakpoint(pc)
+        position: fixed
+        top: 0
+        box-shadow: 0px 4px rgba(0,0,0,.2)
+        background-image: none
+        +size(100%,60px)    
+        +clearfix        
+    .nav-icon
+        position: relative        
+        margin-top: 8px
+        display: none
+        cursor: pointer
+        line-height: 60px
+        +size(70px,60px)
+        +breakpoint(pc)
+            display: block
+            float: left
+        >*
+            +size(30px,5px,4px)
+            line-height: 60px
+            background: darken($colorReservation,30%)
+            margin: 6px auto
+            transition-duration: 0.3s
+        &.on
+            
+            .one
+                transform: rotate(45deg)
+                transform-origin: 0% 65% 
+            .two
+                opacity: 0
+            
+            .three
+                transform: rotate(-45deg)
+                transform-origin: 0% 65% 
+            
+    
+    .logo
+        background: url(../img/logo.png) center center no-repeat
+        margin-top: 5px
+        cursor: pointer
+        +size(100%, 250px)
+        +breakpoint(pc)
+            background: none
+            +size(307px / 2, 77px / 2)
+            display: inline-block
+            float: left
+        &:hover,img:hover
+            transition: all 1s
+            opacity: .7
+        img
+            display: none
+            +size(307px / 2, 77px / 2)
+            float: left
+            +breakpoint(pc)
+                margin-top: 5px                
+                display: inline-block
+    a.reservation_pc
+        display: none
+        +breakpoint(pc)
+            display: block
+            background-color: $colorReservation
+            float: right
+            color: #fff
+            font-size: 15px                          
+            +abpos
+            top: 0
+            right: 0
+            line-height: 60px
+            +size(100px, 60px)
+            &:hover
+                background-color: darken($colorReservation,30%)
+                transition: background 3s
+                
+
+    .menu
+        margin-top: 25px
+        +breakpoint(pc)
+            margin-top: 60px
+            background-color: #fff
+            +size(100%, auto)
+                    
+        ul
+            &.hidden
+                +breakpoint(pc)
+                    display: none
+
+            li  
+                display: block
+                padding: 10px 0
+                font-size: 16px
+                letter-spacing: 3px
+                +breakpoint(pc)
+                    border-bottom: 1px solid darken($colorReservation,30%)
+                    padding: 20px 0
+                    &:last-child
+                        border-bottom: none
+                a
+                    color: $colorText
+                    position: relative
+                    &:before,&:after
+                        +abpos
+                        background-color: rgba(180,165,148,0.4)
+                        top: 8px
+                        +size(15px, 1px)
+                        +breakpoint(pc)
+                            opacity: 0
+                    &:before
+                        left: -35px
+                    &:after
+                        right: -35px
+                    &:hover
+                        &:before,&:after
+                            transition: background 3s
+                            width: 25px
+                            
+                    span.en 
+                        display: none
+                ul 
+                    display: none
+    .menuFooter
+        position: fixed
+        width: 320px        
+        bottom: 0
+        +breakpoint(pc)
+            position: relative
+        .social,.lang
+            ul
+                li 
+                    display: inline-block
+                    
+        .social
+            margin-left: -20px
+            li
+                a  
+                    color: $colorReservation
+                    position: relative                    
+                    padding: 0 6px
+                    font-size: 28px
+                    img
+                        position: absolute                    
+                        margin-top: 2px                  
+        .lang
+            +flex
+            font-size: 16px
+            span
+                padding: 0 15px
+                +breakpoint(pc)
+                    display: none
+            ul
+
+                li
+                    position: relative 
+                    &:after
+                        position: absolute
+                        content: '/'
+                    &:last-child:after
+                        display: none
+                    a
+                        padding: 0 8px
+                        color: $colorText
+                
+        .reservation
+            background-color: $colorReservation
+            position: relative
+            padding: 25px 0
+            +clearfix
+            +breakpoint(pc)
+                +abpos
+                right: 0
+
+            &:hover
+                background-color: lighten($colorReservation,5%)
+                transition: background 3s  
+            a
+                color: white
+                display: block                
+                +breakpoint(pc)
+                    display: none
+                &:after
+                    +abpos(8px, 8px)
+                    bottom: 8px
+                    right: 8px
+                    border: 1px solid $colorBorder
+                .fa-plus
+                    +abpos(80px,40px)
+                span 
+                    font-size: 14px
+                span.cn 
+                    margin-left: -5px
+                    font-size: 20px
+                span.en
+                    font-size: 12px
+                    
+
+                
+
+                         
+                                
+            
+.rightContainer
+    margin-left: 320px
+    font-size: 14px
+    +breakpoint(pc)
+        width: 100%
+        margin-left: 0
+        margin-top: 60px
+
+   
+
+    
+
+    .aboutArea,.newsArea
+        text-align: center
+        
+        p 
+            line-height: 30px
+    .aboutArea,.newsArea
+        .title
+            h1 
+                margin-bottom: 60px
+                position: relative
+                &:before
+                    +abpos                     
+                    width: 25px
+                    height: 1px
+                    bottom: -35px
+                    left: 50%
+                    transform: translateX(-50%)
+                    background-color: darken($colorReservation,30%)
+    .aboutArea 
+        >div 
+            padding: 20px 0
+    .roomArea
+        width: 100%
+        font-size: 0
+        a.imgbox
+            position: relative
+            display: inline-block
+            width: calc(100% / 5 - 1px)
+            img
+                width: 100%
+            
+            .txt
+                font-size: 16px
+                text-shadow: 0 0 3px #444
+                padding: 20px
+                color: #fff
+                position: absolute
+                bottom: 0
+                left: 0
+                z-index: 3
+
+
+        
+                               
+                
+                
+
+
+    .locationArea
+        background-color: $colorLocationArea
+        .container
+            width: 75%
+            .locationInfo,.map
+                display: inline-block
+                +breakpoint(pc)
+                    +block
+            .locationInfo
+                padding-bottom: 50px                
+                *
+                    padding: 0
+                    margin: 0
+                .title
+                    h1,h4 
+                        display: inline-block
+                    h2 
+                        line-height: 4em
+                                            
+                    h1 
+                        margin-right: 50px
+                
+                        
+                    
+                    
+                .method
+                    padding: 50px 0
+                    border-bottom: 2px solid $colorReservation
+                    +breakpoint(pc)
+                        display: block
+                    &:nth-child(3)
+                        border-bottom: none
+                    .icon,.infos
+                        display: inline-block
+                        vertical-align: top                       
+                        
+                    .icon
+                        text-align: center
+                        border: 1px solid $colorReservation
+                        margin-right: 6em
+                        position: relative
+                        +size(60px,60px,100%)
+                        +breakpoint(pc)
+                            margin-bottom: 30px
+                        &:after 
+                            position: absolute
+                            content: ''
+                            background-color: rgba(51,51,51,0.3)
+                            width: 10px
+                            height: 1px
+                            right: -45px
+                        >div
+                            padding-top: 10px
+                        span 
+                            font-weight: bold
+                            font-size: 20px
+                
+                    .infos
+                        h2 
+                            margin-bottom: 10px
+                        p 
+                            line-height: 30px
+
+                a.more 
+                    font-weight: bold
+                    color: darken($colorReservation,30%)
+                    padding: 4px 6px
+                    position: relative
+                    
+                    &:hover
+                        background-color: darken($colorReservation,30%)
+                        transition: background 3s
+                        color: #fff
+                        &:before
+                            transition: all 2s
+                            opacity: 0
+                    &:before
+                        +abpos(-50px,11px)
+                        width: 45px
+                        height: 1px
+                        background-color: darken($colorReservation,30%)
+                                                            
+            .map
+                +breakpoint(pc)
+                    display: none
+                iframe
+                    margin-left: 8em
+    footer
+        background-color: darken($colorReservation,30%)
+        padding: 80px 0
+        color: #fff
+        font-size: 10px
+        +breakpoint(pc)
+            text-align: center
+            line-height: 35px
+            padding: 40px 0
+            
+        p 
+            padding: 0
+            margin: 0
+        .infos 
+            width: calc(100% / 4 - 3px)
+            display: inline-block
+            +breakpoint(pc)
+                +block     
+            * 
+                line-height: 25px
+            span:first-child 
+                padding-right: 8px
+                margin-right: 8px
+                border-right: 1px solid #fff
+            span:last-child
+                text-transform: lowercase                             
+        .footerBottom
+            border-top: 1px solid $colorBorder
+            padding-top: 25px
+            margin-top: 20px
+            +clearfix
+            
+                
+            .share
+                display: inline-block
+                a  
+                    color: #fff
+                    padding: 0 12px
+                    i 
+                        font-size: 24px
+                        &:hover
+                            transition: background 3s
+                            color: $colorReservation                
+            .copyright
+                float: right
+                +breakpoint(pc)
+                    float: none
+                
+            
+.slick-slider
+    position: relative
+    width: 100%
+    display: block
+    box-sizing: border-box
+    -webkit-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+
+    .slick-slide
+        display: none
+        float: left
+        height: 100%
+        min-height: 1px
+        width: 100%
+        &:focus, &:hover
+            outline: 0
+        img
+            position: relative            
+            display: block
+            height: auto
+            width: 100%
+
+    .slick-prev, .slick-next
+        opacity: 0
+        position: absolute
+
+    .slick-dots
+        position: absolute
+        bottom: 20px
+        display: block
+        width: 100%
+        padding: 0
+        margin: 0
+        list-style: none
+        text-align: center
+        li
+            position: relative
+            display: inline-block
+            width: 16px
+            height: 16px
+            margin: 0 8px
+            button
+            font-size: 0
+            cursor: pointer
+            border: 0
+            outline: none
+            background: transparent
+            &:before
+                font-family: 'FontAwesome'
+                font-size: 16px
+                line-height: 1
+                position: absolute
+                top: 0
+                left: 0
+                width: 12px
+                height: 12px
+                content: '\f111'
+                text-align: center
+                color: white
+                transition: opacity 0.25s
+            &.slick-active button:before
+            border: 1px solid #fff
+            color: transparent
+            margin-top: 1px
+            border-radius: 100%
+    .txt
+        +abpos
+        bottom: 0
+        right: 0
+
+    .photo
+        background-size: cover
+        background-position: center center
+        height: 100vh
+        padding-bottom: 5%
+        will-change: transform
+        &:before
+            content: ""
+            display: block
+        * >
+            display: block
+            height: 100%
+            left: 0
+            position: absolute
+            top: 0
+            width: 100%  
+.contain
+    position: relative
+    width: 100%
+    overflow: hidden
+
+  
+.slide
+    height: 100%
+    width: 100%
+        
+.slider        
+    position: relative
+    
+
+// Arrows
+.flickity-prev-next-button,
+.slick-arrow
+    position: absolute
+    opacity: 0
+    width: 40px
+    height: 40px
+    margin-top: -20px
+    z-index: 1
+    top: 50%
+    text-indent: -9999px
+  
+// Dots
+.slick-dots
+    position: absolute
+    left: 50%
+    bottom: 0
+    transform: translateX(-50%)
+    margin: 0
+    padding: 0
+    line-height: initial
+    
+
+.slick-dots li,.dot
+    display: inline-block
+    width: 10px
+    height: 10px
+    margin: 0 5px
+    border-radius: 50%
+    opacity: 1
+    cursor: pointer
+  
+    &.is-selected,
+    &.slick-active,
+    &:hover
+        background: #000
+    
+button
+    display: none
+   
+// Images
+img
+    cursor: move
+    cursor: -webkit-grab
